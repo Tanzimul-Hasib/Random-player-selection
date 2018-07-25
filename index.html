@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta name="viewport" content="width=initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="css/style.css" class="css"> -->
+	<!-- ***************style Start************** -->
+	<style>
+	*{margin: 0;
+	padding: 0;
+	}
+	div.outputbox{
+		/*border: 1px solid #00FF1D;*/
+		width: 400px;
+		height: 350px;
+		text-align: center;
+		margin: auto;
+		margin-top: 15px;
+		display: none;
+	}
+	div.image{
+
+
+		width: 400px;
+		height: 270px;
+		margin: 0 auto;
+		margin-top:20px;
+		border: ;
+	}
+	img{
+	    border-radius:100px;
+		max-width: 370px;
+		max-height:255px;
+		overflow: hidden;
+	}
+
+	div.comment{
+		margin-bottom:;
+		text-decoration: none;
+	}
+
+	h1 {
+		height: ;
+		font-size:33px;
+		font-weight: 500;
+		background: linear-gradient(#001C03, #D700E9);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+		.inputbox{
+		width: 400px;
+		text-align: center;
+		margin: auto;
+	}
+	input.textbox{
+		max-width: 400px;
+		height: 35px;
+		border: 1.5px solid grey;
+		border-radius: 7px;
+	}
+
+	input.textbox:hover{
+		height: 37px;
+		border: 2px solid #568AF2;
+
+	}
+
+	.sButton{
+		margin: 15px;
+		height: 30px;
+		width: 275px;
+		background-color: blue;
+		color: #fff;
+		border-radius: 15px;
+	}
+	.sButton:hover{
+		background-color: #F28141;
+		color: #fff;
+		border-radius: 15px;
+	}
+	</style>
+	<!-- ***************style End************** -->
+</head>
+<body>
+<Div class="row">
+
+	<div class="outputbox" id="hidenopen">
+		<div class="image">
+
+			<img id="myImage" src="images/image_(1).jpg" alt="">	<!-- **********image here*************-->
+
+		</div>
+		<div class="comment">
+			<h1> She Is Your Match </h1>
+		</div>
+	</div>
+	<div class="inputbox">
+
+		<h2> Find Your Match </h2>
+
+		<input id="textBox" type="text" name="submit" onkeypress="keyfunction(event)" value="" placeholder=" Enter your Name" class="textbox">
+
+		<input class="sButton" type="button" name="Submit" value="See result" onclick="imagefinder()" >
+	</div>
+</Div>
+
+
+<script type="text/javascript">
+	function imagefinder(){
+		var imgn;
+	  imgn = Math.floor((Math.random() * (10-1+1)) + 1);
+		document.getElementById("hidenopen").style.display = "block";
+		document.getElementById('myImage').src="images/image_("+imgn+").jpg";
+		document.getElementById("textBox").value = "";
+		return 0;
+	}
+
+	function keyfunction(event){
+		var x=event.which || event.keyCode;
+
+		if (x===13) {
+			imagefinder();
+		}
+	}
+</script>
+</body>
+</html>
